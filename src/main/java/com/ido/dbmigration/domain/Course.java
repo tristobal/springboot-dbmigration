@@ -2,11 +2,13 @@ package com.ido.dbmigration.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Setter
 @Table(schema = "school", name = "course")
 public class Course {
 
@@ -26,16 +28,8 @@ public class Course {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @JsonIgnore
@@ -43,8 +37,4 @@ public class Course {
         return students;
     }
 
-    @JsonIgnore
-    public void setStudents(Set<Student> students) {
-        this.students = students;
-    }
 }
