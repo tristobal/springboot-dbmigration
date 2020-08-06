@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <changeSet id="tag4" author="tristobal">
+        <tagDatabase tag="1.4"/>
+    </changeSet>
+
+    <changeSet id="course_registration_table_creation" author="tristobal">
+        <sql>
+            CREATE TABLE school.course_registration (
+                student_id int REFERENCES school.student(id) ON UPDATE CASCADE ON DELETE CASCADE,
+                course_id int REFERENCES school.course(id) ON UPDATE cascade,
+                CONSTRAINT course_registration_pkey PRIMARY KEY (student_id, course_id)
+            );
+        </sql>
+        <rollback>
+            DROP TABLE school.course_registration;
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

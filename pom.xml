@@ -65,6 +65,19 @@
 					<url>jdbc:postgresql://localhost:5432/demo</url>
 					<user>postgres</user>
 					<password>postgres</password>
+					<locations>classpath:src/main/resources/db/flyway</locations>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>3.10.2</version>
+				<configuration>
+					<driver>org.postgresql.Driver</driver>
+					<url>jdbc:postgresql://localhost:5432/demo</url>
+					<username>postgres</username>
+					<password>postgres</password>
+					<changeLogFile>src/main/resources/db/liquibase/masterchangelog.xml</changeLogFile>
 				</configuration>
 			</plugin>
 		</plugins>

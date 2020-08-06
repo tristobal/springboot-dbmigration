@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <changeSet id="tag3" author="tristobal">
+        <tagDatabase tag="1.3"/>
+    </changeSet>
+
+    <changeSet id="course_table_creation" author="tristobal">
+        <sql>
+            CREATE TABLE school.course (
+                id serial primary key,
+                name varchar(50) not null
+            );
+        </sql>
+        <rollback>
+            DROP TABLE school.course;
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
