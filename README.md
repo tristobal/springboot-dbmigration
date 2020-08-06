@@ -7,8 +7,16 @@ docker run --rm --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=p
 ```
 
 ## Migración con Flyway
+Aplicar cambios en la base de datos.
 ```
 ./mvnw flyway:migrate
+```
+
+Crear una línea base en una base de datos existente con las tablas ya creadas, es decir crear la tabla flyway_schema_history
+con un registro versión 1 y con descripción vacía. Las siguientes migraciones empezarán desde la versión siguiente.
+
+```
+./mvnw flyway:baseline
 ```
 
 ## Migración con Liquibase
