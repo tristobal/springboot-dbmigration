@@ -11,7 +11,7 @@ docker run --rm --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=p
 ./mvnw flyway:migrate
 ```
 
-## Migración conn Liquibase
+## Migración con Liquibase
 
 Ejecutar todos los changeSet definidos en masterchangelog.xml
 De ser la primera ejecución creará las tablas:
