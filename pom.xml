@@ -25,6 +25,11 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
@@ -57,7 +62,7 @@
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>6.5.3</version>
 				<configuration>
-					<url>jdbc:postgresql://localhost:5432/school</url>
+					<url>jdbc:postgresql://localhost:5432/demo</url>
 					<user>postgres</user>
 					<password>postgres</password>
 				</configuration>
